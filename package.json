@@ -1,6 +1,10 @@
 {
   "name": "npm-xymind-sdk",
-  "version": "1.2.0",
+  "version": "1.3.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xykj26363/npm-xymind-sdk.git"
+  },
   "description": "SDK",
   "main": "lib/index.js",
   "files": [
