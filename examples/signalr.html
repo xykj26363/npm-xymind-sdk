@@ -10,7 +10,24 @@
 </div>
 <script src="../lib/index.js"></script>
 <script>
-  new window.xyMind.signalr('https://test')
+  (async () => {
+    try {
+      const measurementDuration = 15
+      const server = 'https://measurement-dev.xymind.cn/'
+      const signalr = new window.xiaoyang.Measurement(measurementDuration, server);
+      await signalr.start()
+      await signalr.onException(e => {
+        // 测量过程中失败错误
+        console.log(e)
+      })
+    } catch (e) {
+      // 网络连接错误
+      console.log('signalr', e)
+    }
+  })()
+  // onFinished(() => {
+  //   console.log('成功')
+  // })
 </script>
 </body>
 </html>
